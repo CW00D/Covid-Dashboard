@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>covid_news_handling module &mdash; Covid Dashboard 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="test_covid_dashboard_displayer module" href="test_covid_dashboard_displayer.html" />
+    <link rel="prev" title="covid_data_handler module" href="covid_data_handler.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Covid Dashboard
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Covid_Dashboard_Source</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="covid_dashboard_displayer.html">covid_dashboard_displayer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="covid_data_handler.html">covid_data_handler module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">covid_news_handling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_dashboard_displayer.html">test_covid_dashboard_displayer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_data_handler.html">test_covid_data_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_news_handling.html">test_covid_news_handling module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Covid Dashboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Covid_Dashboard_Source</a> &raquo;</li>
+      <li>covid_news_handling module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/covid_news_handling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-covid_news_handling">
+<span id="covid-news-handling-module"></span><h1>covid_news_handling module<a class="headerlink" href="#module-covid_news_handling" title="Permalink to this headline"></a></h1>
+<p>This module is responsible for dealing with the news api requests and news update scheduling</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_news_handling.news_API_request">
+<span class="sig-prename descclassname"><span class="pre">covid_news_handling.</span></span><span class="sig-name descname"><span class="pre">news_API_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">covid_terms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Covid</span> <span class="pre">COVID-19</span> <span class="pre">coronavirus'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#covid_news_handling.news_API_request" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Used to return all the news articles from the news api with the given keywords</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>covid_terms: string</dt><dd><p>The keywords used to search the news api</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>news_articles: list</dt><dd><p>The news articles from the news api with the given keywords</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_news_handling.return_news_data">
+<span class="sig-prename descclassname"><span class="pre">covid_news_handling.</span></span><span class="sig-name descname"><span class="pre">return_news_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#covid_news_handling.return_news_data" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Returns the news data</p>
+</div></blockquote>
+<blockquote>
+<div><p>No parameters</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>news_data: list</dt><dd><p>A list with the news data</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_news_handling.schedule_news_updates">
+<span class="sig-prename descclassname"><span class="pre">covid_news_handling.</span></span><span class="sig-name descname"><span class="pre">schedule_news_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#covid_news_handling.schedule_news_updates" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Schedules a new news data update</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>update_interval: int</dt><dd><p>The time until the scheduler should update the news data</p>
+</dd>
+<dt>update_name: str</dt><dd><p>The name of the update that has caused the scheduling of the news data update</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>a key-value pair: dict</dt><dd><p>Returns a dictionary with the key being the update name and the
+value being news scheduler object</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_news_handling.update_news">
+<span class="sig-prename descclassname"><span class="pre">covid_news_handling.</span></span><span class="sig-name descname"><span class="pre">update_news</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">covid_terms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Covid</span> <span class="pre">COVID-19</span> <span class="pre">coronavirus'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#covid_news_handling.update_news" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Used to update the news_data structure with the new news</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>covid_terms: string</dt><dd><p>The keywords used to search the news api</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="covid_data_handler.html" class="btn btn-neutral float-left" title="covid_data_handler module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="test_covid_dashboard_displayer.html" class="btn btn-neutral float-right" title="test_covid_dashboard_displayer module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Christian Wood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

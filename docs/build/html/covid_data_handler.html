@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>covid_data_handler module &mdash; Covid Dashboard 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="covid_news_handling module" href="covid_news_handling.html" />
+    <link rel="prev" title="covid_dashboard_displayer module" href="covid_dashboard_displayer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Covid Dashboard
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Covid_Dashboard_Source</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="covid_dashboard_displayer.html">covid_dashboard_displayer module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">covid_data_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="covid_news_handling.html">covid_news_handling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_dashboard_displayer.html">test_covid_dashboard_displayer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_data_handler.html">test_covid_data_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_covid_news_handling.html">test_covid_news_handling module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Covid Dashboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Covid_Dashboard_Source</a> &raquo;</li>
+      <li>covid_data_handler module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/covid_data_handler.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-covid_data_handler">
+<span id="covid-data-handler-module"></span><h1>covid_data_handler module<a class="headerlink" href="#module-covid_data_handler" title="Permalink to this headline"></a></h1>
+<p>This module is responsible for dealing with the covid api requests and covid update scheduling</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.covid_API_request">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">covid_API_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Exeter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ltla'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#covid_data_handler.covid_API_request" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Used to query the covid19 api and to return results for the relevant area</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>location: str</dt><dd><p>The location for which the user wishes to find covid data for.
+This is automatically set to Exeter</p>
+</dd>
+<dt>location_type: str</dt><dd><p>The sort of location that the user is looking for (is it a county, a country, etc)</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>api.get_json(): dict</dt><dd><p>Returns a dictionary with the covid api data</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.parse_csv_data">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">parse_csv_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#covid_data_handler.parse_csv_data" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Takes a csv file and puts the data in a list of strings
+so that they can be processed later</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>csv_filename<span class="classifier">str</span></dt><dd><p>The name of the file to be open and read from</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>data: list</dt><dd><p>The resulting list of strings</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.process_api_data">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">process_api_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Exter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ltla'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#covid_data_handler.process_api_data" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Calls the funtion covid_API_request and then processes the api data to
+product the data to be displayed on the dashboard</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>location: str</dt><dd><p>The location for which the user wishes to find covid data for.
+This is automatically set to Exeter</p>
+</dd>
+<dt>location_type: str</dt><dd><p>The sort of location that the user is looking for (is it a county, a country, etc)</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>last_7_day_cases: int</dt><dd><p>The number of new cases in the past 7 days</p>
+</dd>
+<dt>current_hospital_cases: int</dt><dd><p>The number of people currently in hospital due to covid</p>
+</dd>
+<dt>total_deaths: int</dt><dd><p>The total number of cumulative deaths from covid</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.process_covid_csv_data">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">process_covid_csv_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">covid_csv_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#covid_data_handler.process_covid_csv_data" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Takes a list of strings (intended to be the result from the
+fuction parse_csv_data) and calculates and returns
+the the number of new cases in the last 7 days, the current
+number of people in hospital and the total cumulative
+number of deaths</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>covid_csv_data: list</dt><dd><p>A list of strings (as produced by the function parse_csv_data)</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>last_7_day_cases: int</dt><dd><p>The number of new cases in the past 7 days</p>
+</dd>
+<dt>current_hospital_cases: int</dt><dd><p>The number of people currently in hospital due to covid</p>
+</dd>
+<dt>total_deaths: int</dt><dd><p>The total number of cumulative deaths from covid</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.return_covid_data">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">return_covid_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#covid_data_handler.return_covid_data" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Returns the local or national covid data depending on the input</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>location_type: str</dt><dd><p>Which sort of data should be returned (local/nation)</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>local_covid_data: list</dt><dd><p>A list with the local covid data</p>
+</dd>
+<dt>national_covid_data: list</dt><dd><p>A list with the national covid data</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="covid_data_handler.schedule_covid_updates">
+<span class="sig-prename descclassname"><span class="pre">covid_data_handler.</span></span><span class="sig-name descname"><span class="pre">schedule_covid_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#covid_data_handler.schedule_covid_updates" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Schedules a new covid data update for both the local and national data</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>update_interval: int</dt><dd><p>The time until the scheduler should update the covid data</p>
+</dd>
+<dt>update_name: str</dt><dd><p>The name of the update that has caused the scheduling of the covid data update</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>a key-value pair: dict</dt><dd><p>Returns a dictionary with the key being the update name and the value being a list containing
+both the local and national scheduler objects</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="covid_dashboard_displayer.html" class="btn btn-neutral float-left" title="covid_dashboard_displayer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="covid_news_handling.html" class="btn btn-neutral float-right" title="covid_news_handling module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Christian Wood.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
